@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">EasyAccessModule</string>
+
+    <string name="lock_not_set">Secure lock screen hasn\'t set up.\n</string>
+    <string name="lock_not_set_text">Set up a more suitable lock screen option</string>
+
+</resources>

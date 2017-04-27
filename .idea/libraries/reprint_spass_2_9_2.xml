@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="reprint_spass-2.9.2">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.android/build-cache/cb38b9b2f6d992f28cf40f43ce7e559ac1f6e3aa/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/cb38b9b2f6d992f28cf40f43ce7e559ac1f6e3aa/output/jars/libs/sdk-v1.0.0.jar!/" />
+      <root url="jar://$USER_HOME$/.android/build-cache/cb38b9b2f6d992f28cf40f43ce7e559ac1f6e3aa/output/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.android/build-cache/cb38b9b2f6d992f28cf40f43ce7e559ac1f6e3aa/output/jars/libs/pass-v1.1.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

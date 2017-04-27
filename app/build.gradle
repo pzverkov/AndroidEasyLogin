@@ -1,0 +1,63 @@
+apply plugin: 'com.android.application'
+
+repositories {
+    maven { url "https://jitpack.io" }
+}
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "com.sc.easyloginapp"
+        minSdkVersion 16
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+ext {
+    reprint = '2.9.2@aar'
+    app_compat = '25.3.1'
+    constraint_layout = '1.0.2'
+    eventbus = '3.0.0'
+}
+
+dependencies {
+
+    //EasyAccessModule
+    compile project(':easyaccessmodule')
+
+    //Support
+    compile "com.android.support:appcompat-v7:${app_compat}"
+    compile "com.android.support.constraint:constraint-layout:${constraint_layout}"
+
+    //FingerPrint
+    compile "com.github.ajalt.reprint:core:${reprint}"
+    compile "com.github.ajalt.reprint:reprint_spass:${reprint}"
+
+    //EventBus
+    compile "org.greenrobot:eventbus:${eventbus}"
+}
+
+//generates jar
+task androidSourcesJar(type: Jar) {
+    classifier = 'sources'
+    from android.sourceSets.main
+}
+
+artifacts {
+    archives androidSourcesJar
+}
+
+task androidJar(type: Exec, dependsOn: 'compileRelease') {
+    commandLine = ['jar', 'cf', '../../android-stream-lib.jar', 'org']
+    workingDir = 'build/classes/release'
+}
+

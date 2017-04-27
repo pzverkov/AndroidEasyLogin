@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="core-2.9.2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.android/build-cache/c814edeae31f3d549a7a61734b3ce6e05d0bf656/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/c814edeae31f3d549a7a61734b3ce6e05d0bf656/output/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.ajalt.reprint/core/2.9.2/1133cd4d526a1baf724a2e60ca970fe9c296eba2/core-2.9.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
