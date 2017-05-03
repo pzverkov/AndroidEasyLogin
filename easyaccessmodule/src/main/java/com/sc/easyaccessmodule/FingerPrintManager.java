@@ -5,6 +5,7 @@ import com.github.ajalt.reprint.core.AuthenticationListener;
 import com.github.ajalt.reprint.core.Reprint;
 
 import android.content.Context;
+import android.util.Log;
 
 /**
  * Created by Peter on 24.04.2017.
@@ -20,6 +21,7 @@ public class FingerPrintManager {
             @Override
             public void onSuccess(int moduleTag) {
                 setFingerSupport(context, true);
+                Log.e("FingerPrintManager", "onSuccess. Tag = " + moduleTag);
             }
 
             @Override
@@ -27,12 +29,23 @@ public class FingerPrintManager {
                                   boolean fatal, CharSequence errorMessage, int moduleTag,
                                   int errorCode) {
                 setFingerSupport(context, false);
+                Log.e("FingerPrintManager", "Failure " + errorMessage + " code = " + errorCode);
             }
         };
     }
 
     public static void init(Context context) {
-        Reprint.initialize(context);
+        Reprint.initialize(context, new Reprint.Logger() {
+            @Override
+            public void log(String message) {
+                Log.d("Reprint", message);
+            }
+
+            @Override
+            public void logException(Throwable throwable, String message) {
+                Log.e("Reprint", message, throwable);
+            }
+        });
         Reprint.authenticate(getAuthenticationListener(context));
     }
 
@@ -45,7 +58,8 @@ public class FingerPrintManager {
     }
 
     public static boolean getFingerSupport(Context context) {
-        return DataManager.loadBoolean(context, SUPPORT_FINGERPRINT_TAG, false);
+        return true;
+        //return DataManager.loadBoolean(context, SUPPORT_FINGERPRINT_TAG, false);
     }
 
 }

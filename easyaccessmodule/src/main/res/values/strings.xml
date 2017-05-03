@@ -4,4 +4,15 @@
     <string name="lock_not_set">Secure lock screen hasn\'t set up.\n</string>
     <string name="lock_not_set_text">Set up a more suitable lock screen option</string>
 
+    <!--FingerPrint-->
+    <string name="title_owner">Are you the device owner?</string>
+    <string name="title_enter_finger">Finger print for \'%s\'</string>
+
+    <!--ACTIONS-->
+    <string name="action_back">Back</string>
+    <string name="action_confirm">Confirm</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_remove">Remove</string>
+    <string name="action_connect">Connect</string>
+
 </resources>
